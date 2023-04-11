@@ -37,7 +37,7 @@ GymPass style app.
 | ------------------------ | ----------------------------------------------------- |
 | `npx prisma init`        | inicializa o prisma cli                               |
 | **schema**               | representação das tabelas no BD                       |
-| `npx prima generate`     | gera a tipagem Typescript automaticamente do schema   |
+| `npx prisma generate`    | gera a tipagem Typescript automaticamente do schema   |
 | `npx prisma migrate dev` | executa a ultima mudança feita na migration para o DB |
 
 O que é o Docker?
