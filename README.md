@@ -30,3 +30,16 @@ GymPass style app.
 - [ ] Os dados da aplicação precisam estar persistidos em um banco PostgresSQL;
 - [ ] Todas lista de dados precisam estar paginadas com 20 itens por página;
 - [ ] O usuário deve ser identificado por um JWT (JSON Web Token);
+
+## fundamentos
+
+| func                     | desc                                                  |
+| ------------------------ | ----------------------------------------------------- |
+| `npx prisma init`        | inicializa o prisma cli                               |
+| **schema**               | representação das tabelas no BD                       |
+| `npx prima generate`     | gera a tipagem Typescript automaticamente do schema   |
+| `npx prisma migrate dev` | executa a ultima mudança feita na migration para o DB |
+
+O que é o Docker?
+
+Docker é uma plataforma de software que permite criar, implantar e executar aplicativos em contêineres virtuais. Ele permite que as aplicações e seus componentes sejam empacotados em um contêiner isolado e portátil, que pode ser executado em qualquer ambiente que tenha o Docker instalado, sem a necessidade de instalar dependências adicionais ou fazer grandes configurações. Com o Docker, é possível ter ambientes de desenvolvimento, teste e produção consistentes, seguros e escaláveis, aumentando a eficiência e a produtividade do desenvolvimento de software.
