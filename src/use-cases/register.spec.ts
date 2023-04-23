@@ -1,16 +1,22 @@
 import { compare } from "bcryptjs";
-import { describe, expect, it } from "vitest";
+import { beforeEach, describe, expect, it } from "vitest";
 
 import { InMemoryUsersRepository } from "@/repositories/in-memory/in-memory-users-repository";
 import { RegisterUseCase } from "@/use-cases/register";
 import { UserAlreadyExistsError } from "@/use-cases/errors/user-already-exists-error";
+import { UsersRepository } from "@/repositories/users-repository";
+
+let usersRepository: UsersRepository;
+let sut: RegisterUseCase;
 
 describe("Register Use Case", () => {
-  it("should be able to register", async () => {
-    const usersRepository = new InMemoryUsersRepository();
-    const registerUseCase = new RegisterUseCase(usersRepository);
+  beforeEach(() => {
+    usersRepository = new InMemoryUsersRepository();
+    sut = new RegisterUseCase(usersRepository);
+  });
 
-    const { user } = await registerUseCase.execute({
+  it("should be able to register", async () => {
+    const { user } = await sut.execute({
       name: "elias alexandre",
       email: "elias@alexandre.com",
       password: "87654321",
@@ -38,19 +44,16 @@ describe("Register Use Case", () => {
   });
 
   it("should no be able to register with same email twice", async () => {
-    const usersRepository = new InMemoryUsersRepository();
-    const registerUseCase = new RegisterUseCase(usersRepository);
-
     const email = "elias@alexandre.com";
 
-    await registerUseCase.execute({
+    await sut.execute({
       email,
       name: "elias alexandre",
       password: "87654321",
     });
 
     await expect(() =>
-      registerUseCase.execute({
+      sut.execute({
         email,
         name: "luis alexandre",
         password: "12345678",
