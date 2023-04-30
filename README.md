@@ -50,3 +50,7 @@ Docker é uma plataforma de software que permite criar, implantar e executar apl
 
   - SOLID
   - D (dependency Inversion Principle): os arquivos que precisarem do UseCase, é esse arquivo que deve enviar as dependências
+
+## Mocking
+
+- Criar valores fictícios para dados, funções...
