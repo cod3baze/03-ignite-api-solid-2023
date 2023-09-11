@@ -11,6 +11,8 @@ export class PrismaGymsRepository implements GymsRepository {
     return gym;
   }
 
+  async searchMany(query: string, page: number) {}
+
   async findById(id: string): Promise<Gym | null> {
     const gym = await prisma.gym.findUnique({
       where: { id },
