@@ -54,3 +54,8 @@ Docker é uma plataforma de software que permite criar, implantar e executar apl
 ## Mocking
 
 - Criar valores fictícios para dados, funções...
+
+## Tests
+
+- E2E: testa desde à rota até a chamada no banco de dados, ou até o retorno dos dados
+  - testar a aplicação de ponta á ponta, testa como o usuário vai usar a API.
