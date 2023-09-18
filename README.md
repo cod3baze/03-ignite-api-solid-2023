@@ -59,3 +59,9 @@ Docker é uma plataforma de software que permite criar, implantar e executar apl
 
 - E2E: testa desde à rota até a chamada no banco de dados, ou até o retorno dos dados
   - testar a aplicação de ponta á ponta, testa como o usuário vai usar a API.
+
+`npm link | npm link [vitest-env-prisma]`: para poder utilizar a lib local de environment
+
+os `scripts` arquivo `package.json`, todo comando que começar com `pre` vai ser executado antes de qualquer escript, ao contrário do `post`.
+
+- ex: `pre[test]: 'run vitest' | post[test]: 'run vitest'`
